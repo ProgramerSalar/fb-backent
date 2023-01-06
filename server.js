@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 
 const { readdirSync } = require("fs");
 const app = express();
+app.use(express.json());
 app.use(cors());
 
 readdirSync("./routes").map((r) => app.use("/", require("./routes/" + r)));
